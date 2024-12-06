@@ -1,0 +1,73 @@
+.button {
+	position: relative;
+	z-index: 7;
+
+	display: grid;
+	align-items: center;
+
+	width: 100%;
+	height: 50px;
+
+	cursor: pointer;
+	transition-duration: 300ms;
+
+	border-radius: 16px;
+	outline: none;
+	background: var(--primary);
+	justify-items: center;
+}
+
+.iconButton {
+	width: fit-content;
+	padding: 0 16px;
+}
+
+.button:active,
+.weba:hover {
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+	filter: brightness(0.9);
+}
+
+.text {
+	user-select: none;
+
+	color: var(--white);
+
+	font-weight: 600;
+}
+
+.iconText {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 12px;
+}
+
+.iconText > svg {
+	fill: var(--white);
+
+	width: 24px;
+}
+
+.spinner {
+	width: 15px;
+	height: 15px;
+
+	animation: spin 1s linear infinite;
+
+	border: 1px solid var(--white);
+	border-top: 1px solid var(--primary);
+	border-radius: 9999px;
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+.disableButton {
+	cursor: default;
+	filter: none !important;
+
+	background: var(--tg-theme-subtitle-text-color);
+}

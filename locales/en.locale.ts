@@ -1,0 +1,16 @@
+export const en = {
+    locale: "en",
+    language: "English",
+    lang: "EN",
+    banana_vpn: 'banana_vpn',
+    error404: "Page not found, 404 error",
+    error500: "Server failure, error 500",
+    main_title: "The web application works only in our tg bot",
+    welcome_back: "Welcome back",
+    no_plan: "No plan",
+    select_plan: "Select a plan",
+    proceed_to_payment: "Proceed to payment",
+    welcome_to_banana_vpn: "Welcome to banana.vpn",
+    start_text1: "Your internet - your rules. banana.vpn will provide security, anonymity and free access to any content.",
+    start_text2: "Choose one of three tariffs and use the Internet without restrictions! Banana.vpn is your online shield.",
+};

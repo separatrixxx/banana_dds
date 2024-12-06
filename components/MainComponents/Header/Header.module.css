@@ -1,0 +1,32 @@
+.header {
+	z-index: 7;
+
+	display: grid;
+
+	width: 100%;
+	height: fit-content;
+	grid-template-columns: 1fr auto;
+	gap: 40px;
+	justify-items: left;
+}
+
+.welcomeDiv {
+	display: grid;
+}
+
+.welcomeDiv > h1 {
+	color: var(--tg-theme-subtitle-text-color);
+}
+
+.username {
+	color: var(--tg-theme-text-color);
+
+	font-weight: 600;
+}
+
+@media (max-width: 350px) {
+	.header {
+		grid-template-columns: auto;
+		gap: 20px;
+	}
+}

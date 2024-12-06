@@ -1,0 +1,16 @@
+.block {
+	display: grid;
+	gap: 16px;
+}
+
+.startTitle {
+	color: var(--tg-theme-text-color);
+
+	font-weight: 600;
+}
+
+.startText {
+	color: var(--tg-theme-subtitle-text-color);
+
+	font-weight: 400;
+}

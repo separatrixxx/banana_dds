@@ -1,0 +1,13 @@
+.block {
+	z-index: 7;
+
+	display: grid;
+
+	width: calc(100% - 60px);
+	height: fit-content;
+	padding: 24px 30px;
+
+	border-radius: 16px;
+	background: var(--tg-theme-section-bg-color);
+	box-shadow: 0 8px 12px rgba(0, 0, 0, 0.05);
+}
