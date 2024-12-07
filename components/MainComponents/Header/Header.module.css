@@ -6,7 +6,7 @@
 	width: 100%;
 	height: fit-content;
 	grid-template-columns: 1fr auto;
-	gap: 40px;
+	gap: 30px;
 	justify-items: left;
 }
 
@@ -22,11 +22,4 @@
 	color: var(--tg-theme-text-color);
 
 	font-weight: 600;
-}
-
-@media (max-width: 350px) {
-	.header {
-		grid-template-columns: auto;
-		gap: 20px;
-	}
 }

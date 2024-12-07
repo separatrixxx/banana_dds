@@ -18,8 +18,7 @@ export const Header = (): JSX.Element => {
                     {tgUser?.username ? tgUser?.username : tgUser?.first_name}
                 </Htag>
             </div>
-            <Button text={setLocale(tgUser?.language_code).no_plan}
-                isDisabled={true} isIcon={true} onClick={() => {}} />
+            <Button isDisabled={true} isIcon={true} onClick={() => {}} />
         </header>
     );
 };

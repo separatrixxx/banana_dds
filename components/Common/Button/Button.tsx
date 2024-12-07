@@ -18,7 +18,7 @@ export const Button = ({ text, isLoading, isDisabled, isIcon, className, onClick
             {
                 !isLoading ?
                     <Htag tag='m' className={cn(styles.text, {
-                        [styles.iconText]: isIcon,
+                        [styles.iconText]: isIcon && text,
                     })}>
                         {
                             isIcon && <CrownIcon />

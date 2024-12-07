@@ -11,6 +11,8 @@
 	cursor: pointer;
 	transition-duration: 300ms;
 
+	border: none;
+
 	border-radius: 16px;
 	outline: none;
 	background: var(--primary);
@@ -30,6 +32,9 @@
 }
 
 .text {
+	display: grid;
+	align-items: center;
+
 	user-select: none;
 
 	color: var(--white);
@@ -38,12 +43,11 @@
 }
 
 .iconText {
-	display: grid;
 	grid-template-columns: auto 1fr;
 	gap: 12px;
 }
 
-.iconText > svg {
+.text > svg {
 	fill: var(--white);
 
 	width: 24px;
@@ -69,5 +73,5 @@
 	cursor: default;
 	filter: none !important;
 
-	background: var(--tg-theme-subtitle-text-color);
+	background: var(--dark);
 }

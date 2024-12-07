@@ -1,0 +1,12 @@
+.mainBlock {
+	z-index: 7;
+
+	display: grid;
+
+	width: 100%;
+	gap: 30px;
+}
+
+.mainTextBlock {
+	margin-top: 160px;
+}

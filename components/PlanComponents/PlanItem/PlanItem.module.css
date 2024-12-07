@@ -1,0 +1,68 @@
+.planItem {
+	display: grid;
+
+	width: calc(90% - 48px);
+	padding: 32px 24px;
+
+	border-radius: 16px;
+	background: var(--tg-theme-section-bg-color);
+	box-shadow: 0 3px 14px rgba(0, 0, 0, 0.12);
+	justify-items: left;
+	gap: 16px;
+}
+
+.planName {
+	user-select: none;
+
+	color: var(--tg-theme-text-color);
+
+	font-weight: 600;
+}
+
+.planPriceDiv {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 10px;
+}
+
+.planPrice {
+	user-select: none;
+
+	color: var(--tg-theme-text-color);
+
+	font-weight: 800;
+}
+
+.planDuration {
+	margin-top: 4px;
+
+	user-select: none;
+
+	color: var(--tg-theme-subtitle-text-color);
+
+	font-weight: 400;
+}
+
+.planFeaturesDiv {
+	display: grid;
+	gap: 12px;
+	justify-items: left;
+}
+
+.planFeature {
+	display: grid;
+	align-items: center;
+
+	user-select: none;
+
+	color: var(--tg-theme-subtitle-text-color);
+
+	font-weight: 400;
+	grid-template-columns: auto 1fr;
+	gap: 8px;
+}
+
+.planFeature > svg {
+	width: 16px;
+	fill: rgba(255, 190, 3, 0.3);
+}

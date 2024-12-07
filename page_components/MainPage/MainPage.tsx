@@ -3,11 +3,8 @@ import { Toaster } from 'react-hot-toast';
 import { useSetup } from '../../hooks/useSetup';
 import { MainLink } from '../../components/MainComponents/MainLink/MainLink';
 import { Header } from '../../components/MainComponents/Header/Header';
-import { Button } from '../../components/Common/Button/Button';
-import { setLocale } from '../../helpers/locale.helper';
-import { Block } from '../../components/Common/Block/Block';
-import { StartText } from '../../components/MainComponents/StartText/StartText';
 import MapPattern from './map.svg';
+import { MainBlock } from '../../components/MainComponents/MainBlock/MainBlock';
 
 
 export const MainPage = (): JSX.Element => {
@@ -32,13 +29,10 @@ export const MainPage = (): JSX.Element => {
                             }}
                         />
                         <Header />
+                        <MainBlock />
                         <MapPattern className={styles.mapPattern} />
-                        <Block className={styles.mainBlock}>
-                            <StartText />
-                        </Block>
                         <div className={styles.gradient} />
-                        <Button text={setLocale(tgUser.language_code).select_plan}
-                            onClick={() => {}} />
+
                     </>
             }
         </div>
