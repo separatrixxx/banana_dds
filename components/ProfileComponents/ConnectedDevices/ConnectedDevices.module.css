@@ -1,0 +1,21 @@
+.connectedDevices {
+	display: grid;
+
+	width: 100%;
+	gap: 10px;
+	justify-items: left;
+}
+
+.connectedDevicesTitle {
+	margin-bottom: 10px;
+
+	color: var(--tg-theme-text-color);
+
+	font-weight: 600;
+}
+
+.connectedDevicesText {
+	color: var(--tg-theme-subtitle-text-color);
+
+	font-weight: 400;
+}

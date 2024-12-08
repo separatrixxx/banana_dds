@@ -29,4 +29,13 @@ export const en = {
         sin: "servers",
         gen: "servers",
     },
+    errors: {
+        get_user_error: "An error occurred while retrieving user information",
+    },
+    download_launcher: "Download launcher",
+    connected_devices: "Connected devices",
+    plan_available_until: "Plan is available until",
+    change_plan: "Change plan",
+    cancel_subscription: "Cancel subscription",
+    installation_guide: "Installation guide",
 };

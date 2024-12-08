@@ -29,4 +29,13 @@ export const ru = {
         sin: "сервера",
         gen: "серверов",
     },
+    errors: {
+        get_user_error: "Произошла ошибка при получении информации о пользователе",
+    },
+    download_launcher: "Скачать лаунчер",
+    connected_devices: "Подключённые устройства",
+    plan_available_until: "Тариф доступен до",
+    change_plan: "Сменить план",
+    cancel_subscription: "Отменить подписку",
+    installation_guide: "Инструкция по установке",
 };

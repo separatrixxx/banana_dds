@@ -6,12 +6,14 @@ import { Button } from '../../Common/Button/Button';
 import { setLocale } from '../../../helpers/locale.helper';
 import { useState } from 'react';
 import { PlanBlock } from '../../PlanComponents/PlanBlock/PlanBlock';
+import { setUserPlan } from '../../../features/user/userSlice';
 
 
 export const MainBlock = (): JSX.Element => {
-    const { webApp, tgUser } = useSetup();
+    const { dispatch, webApp, tgUser } = useSetup();
 
     const [isPlan, setIsPlan] = useState<boolean>(false);
+    const [activePlan, setActibePlan] = useState<'Basic' | 'Pro' | 'Marat'>('Basic');
 
     if (webApp && isPlan) {
         webApp?.BackButton.show();
@@ -29,12 +31,14 @@ export const MainBlock = (): JSX.Element => {
                     <Block className={styles.mainTextBlock}>
                         <StartText />
                     </Block>
-                : <PlanBlock />
+                : <PlanBlock setActibePlan={setActibePlan} />
             }
             <Button text={setLocale(tgUser?.language_code)[!isPlan ? 'select_plan' : 'proceed_to_payment']}
                 onClick={() => {
                     if (!isPlan) {
                         setIsPlan(true);
+                    } else {
+                        dispatch(setUserPlan(activePlan));
                     }
                 }} />
         </div>

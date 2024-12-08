@@ -1,3 +1,4 @@
+import { PlanBlockProps } from './PlanBlock.props';
 import styles from './PlanBlock.module.css';
 import { useSetup } from '../../../hooks/useSetup';
 import { useState } from 'react';
@@ -13,7 +14,7 @@ import { PlanInterface } from '../../../interfaces/plan.interface';
 import { PlanItem } from '../PlanItem/PlanItem';
 
 
-export const PlanBlock = (): JSX.Element => {
+export const PlanBlock = ({ setActibePlan }: PlanBlockProps): JSX.Element => {
     const { webApp, tgUser } = useSetup();
 
     const [duration, setDuration] = useState<'monthly' | 'yearly'>('monthly');
@@ -54,7 +55,8 @@ export const PlanBlock = (): JSX.Element => {
             <Swiper className={styles.planList}
                 modules={[Pagination, A11y, Autoplay]}
                 slidesPerView={1.2}
-                scrollbar={{ draggable: true }}>
+                scrollbar={{ draggable: true }}
+                onSlideChange={(swiper) => setActibePlan(plans[swiper.activeIndex].name as 'Basic')}>
                 {
                     plans.map(p => (
                         <SwiperSlide key={p.id}>

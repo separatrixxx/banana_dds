@@ -11,8 +11,8 @@
 	width: 100%;
 	height: 100vh;
 
-	background: rgba(31, 31, 31, 0.2);
-	backdrop-filter: blur(1px);
+	background: rgba(0, 0, 0, 0.4);
+	backdrop-filter: blur(2px);
 }
 
 .active {
@@ -24,23 +24,9 @@
 	align-items: center;
 	justify-items: center;
 
-	padding: 25px;
+	padding: 35px 40px;
 
-	border-radius: 20px;
-	background: var(--white);
-	filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
-}
-
-@media (max-width: 580px) {
-	.modalContent {
-		padding: 20px;
-	}
-}
-
-@media (max-width: 300px) {
-	.modalContent {
-		padding: 15px;
-
-		border-radius: 15px;
-	}
+	border-radius: 32px;
+	background: var(--tg-theme-section-bg-color);
+	box-shadow: 0 8px 12px rgba(0, 0, 0, 0.05);
 }

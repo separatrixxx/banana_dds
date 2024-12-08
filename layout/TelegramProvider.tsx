@@ -2,6 +2,7 @@ import Script from "next/script";
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { ITelegramUser, IWebApp } from "../types/telegram";
 import { useSetup } from "../hooks/useSetup";
+import { getUser } from "../helpers/user.helper";
 
 
 export interface ITelegramContext {
@@ -24,6 +25,13 @@ export const TelegramProvider = ({ children }: { children: React.ReactNode }) =>
       app.ready();
       setWebApp(app);
       app.expand();
+
+      getUser({
+        router: router,
+        webApp: app,
+        dispatch: dispatch,
+        tgUser: app.initDataUnsafe.user,
+      });
     }
   }, [router, dispatch]);
 

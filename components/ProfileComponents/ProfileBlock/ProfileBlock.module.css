@@ -1,0 +1,12 @@
+.profileBlock {
+	z-index: 7;
+
+	display: grid;
+
+	width: 100%;
+	gap: 30px;
+}
+
+.connectedDevicesBlock {
+	margin-top: 160px;
+}

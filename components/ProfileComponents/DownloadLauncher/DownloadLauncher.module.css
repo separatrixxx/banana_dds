@@ -1,0 +1,74 @@
+.downloadLauncher {
+	display: grid;
+
+	width: 100%;
+	gap: 32px;
+	justify-items: lefr;
+}
+
+.downloadLauncherTitle {
+	color: var(--tg-theme-text-color);
+
+	font-weight: 600;
+}
+
+.downloadLinksDiv {
+	display: grid;
+
+	width: 100%;
+	gap: 12px;
+	justify-items: center;
+}
+
+.downloadLauncherLink > h1 {
+	transition-duration: 300ms;
+
+	color: var(--tg-theme-subtitle-text-color);
+
+	font-weight: 400;
+}
+
+.downloadLauncherLink {
+	display: grid;
+	align-items: center;
+
+	width: 100%;
+
+	cursor: pointer;
+	grid-template-columns: 1fr auto;
+	justify-items: left;
+}
+
+.downloadLauncherLink > svg {
+	fill: rgba(255, 190, 3, 0.3);
+
+	width: 16px;
+
+	transition-duration: 300ms;
+}
+
+.downloadButton > h1 {
+	max-width: 80%;
+}
+
+.downloadLauncherLink:active > h1,
+.weba:hover > h1 {
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+	filter: brightness(0.9);
+}
+
+.downloadButton {
+	width: 100%;
+	justify-self: center;
+
+	height: fit-content;
+	padding: 10px 0;
+}
+
+.downloadLauncherLink:active > svg,
+.weba:hover > svg {
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+	fill: var(--primary);
+}

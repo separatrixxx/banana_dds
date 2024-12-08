@@ -9,10 +9,13 @@ export const useSetup = () => {
     const dispatch = useDispatch();
     const { webApp, tgUser } = useTelegram();
 
+    const user = useSelector((state: AppState) => state.user.user);
+
     return {
         router,
         dispatch,
         webApp,
         tgUser,
+        user,
     };
 };

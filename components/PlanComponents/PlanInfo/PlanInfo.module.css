@@ -1,0 +1,49 @@
+.planInfo,
+.planPriceDiv,
+.planButtonsDiv {
+	display: grid;
+	justify-items: center;
+}
+
+.planInfo {
+	width: 100%;
+	gap: 32px;
+}
+
+.planPriceDiv {
+	gap: 8px;
+
+	margin-bottom: 12px;
+}
+
+.planButtonsDiv {
+	gap: 12px;
+
+	width: 100%;
+}
+
+.planPrice {
+	color: var(--tg-theme-text-color);
+
+	font-weight: 800;
+}
+
+.planTextS {
+	text-align: center;
+
+	color: var(--tg-theme-subtitle-text-color);
+
+	font-weight: 400;
+}
+
+.cancelSubscription {
+	cursor: pointer;
+	transition-duration: 300ms;
+}
+
+.cancelSubscription:active,
+.weba:hover {
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+	filter: brightness(0.9);
+}
