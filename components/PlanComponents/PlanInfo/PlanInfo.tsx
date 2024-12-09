@@ -23,7 +23,7 @@ export const PlanInfo = (): JSX.Element => {
                 </Htag>
             </div>
             <Htag tag='s' className={styles.planTextS}>
-                {setLocale(tgUser?.language_code).plan_available_until + ' ' + formatDate(user.datePlan)}
+                {setLocale(tgUser?.language_code).plan_available_until + ' ' + formatDate(user.date_plan)}
             </Htag>
             <div className={styles.planButtonsDiv}>
                 <Button text={setLocale(tgUser?.language_code).change_plan}

@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import cn from 'classnames';
 
 
-export const Modal = ({ isActive, setIsActive, children }: ModalProps): JSX.Element => {
+export const Modal = ({ isActive, setIsActive, children, className }: ModalProps): JSX.Element => {
     const variants = {
         visible: {
             opacity: 1,
@@ -39,7 +39,7 @@ export const Modal = ({ isActive, setIsActive, children }: ModalProps): JSX.Elem
     }, [setIsActive]);
 
     return (
-        <motion.div className={cn(styles.modal, {
+        <motion.div className={cn(styles.modal, className, {
             [styles.active]: isActive,
         })} onClick={() => setIsActive(false)}
             variants={variants}

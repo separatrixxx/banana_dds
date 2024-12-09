@@ -27,7 +27,6 @@ export const TelegramProvider = ({ children }: { children: React.ReactNode }) =>
       app.expand();
 
       getUser({
-        router: router,
         webApp: app,
         dispatch: dispatch,
         tgUser: app.initDataUnsafe.user,

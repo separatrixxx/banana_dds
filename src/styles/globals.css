@@ -28,11 +28,11 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-	background-color: var(--background);
+	background-color: var(--tg-theme-bg-color);
 }
 
 ::-webkit-scrollbar-thumb {
-	border-radius: 30px;
+	border-radius: 16px;
 	background-color: var(--primary);
 }
 
@@ -53,7 +53,9 @@ a {
 
 :root {
 	--primary: #FFBE03;
+	--second: #F38859;
 	--dark: #707579;
+	--light: #EEE;
 	--white: #FFF;
 	--error: #FF1500;
 	--font-family: 'Montserrat', sans-serif;

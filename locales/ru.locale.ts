@@ -31,6 +31,7 @@ export const ru = {
     },
     errors: {
         get_user_error: "Произошла ошибка при получении информации о пользователе",
+        get_servers_error: "Произошла ошибка при получении доступных серверов",
     },
     download_launcher: "Скачать лаунчер",
     connected_devices: "Подключённые устройства",
@@ -38,4 +39,8 @@ export const ru = {
     change_plan: "Сменить план",
     cancel_subscription: "Отменить подписку",
     installation_guide: "Инструкция по установке",
+    select_server: "Выберите сервер",
+    available_servers: "Доступные сервера",
+    advanced_servers: "Продвинутые сервера",
+    upgrade_to_select_server: "Перейдите на $$$, чтобы выбрать этот сервер",
 };

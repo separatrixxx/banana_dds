@@ -7,8 +7,9 @@ const userData: UserInterface = {
     plan: 'None',
     duration: 'monthly',
     price: 0,
-    datePlan: '',
+    date_plan: '',
     devices: [],
+    current_server: '',
 };
 
 export const userSlice = createSlice({

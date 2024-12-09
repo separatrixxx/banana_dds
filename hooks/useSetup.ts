@@ -10,6 +10,7 @@ export const useSetup = () => {
     const { webApp, tgUser } = useTelegram();
 
     const user = useSelector((state: AppState) => state.user.user);
+    const servers = useSelector((state: AppState) => state.servers.servers);
 
     return {
         router,
@@ -17,5 +18,6 @@ export const useSetup = () => {
         webApp,
         tgUser,
         user,
+        servers,
     };
 };

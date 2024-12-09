@@ -3,6 +3,7 @@ export interface UserInterface {
     plan: 'Basic' | 'Pro' | 'Marat' | 'None',
     duration: 'monthly' | 'yearly',
     price: number,
-    datePlan: string,
+    date_plan: string,
     devices: string[],
+    current_server: string,
 }

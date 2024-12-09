@@ -7,6 +7,7 @@ import { ConnectedDevices } from '../ConnectedDevices/ConnectedDevices';
 import { Modal } from '../../Common/Modal/Modal';
 import { useState } from 'react';
 import { DownloadLauncher } from '../DownloadLauncher/DownloadLauncher';
+import { CurrentServer } from '../../ServersComponents/CurrentServer/CurrentServer';
 
 
 export const ProfileBlock = (): JSX.Element => {
@@ -20,6 +21,7 @@ export const ProfileBlock = (): JSX.Element => {
                 <Block className={styles.connectedDevicesBlock}>
                     <ConnectedDevices />
                 </Block>
+                <CurrentServer />
                 <Button text={setLocale(tgUser?.language_code).download_launcher}
                     onClick={() => setIsActive(true)} />
             </div>

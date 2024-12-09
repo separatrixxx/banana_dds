@@ -1,0 +1,65 @@
+.currentButton {
+	z-index: 7;
+
+	display: grid;
+	align-items: center;
+
+	width: calc(100% - 32px);
+	min-width: 200px;
+	height: fit-content;
+	padding: 12px 16px;
+
+	cursor: pointer;
+	transition-duration: 300ms;
+
+	border: none;
+
+	border-radius: 16px;
+	outline: none;
+	background: var(--tg-theme-section-bg-color);
+	box-shadow: 0 8px 12px rgba(0, 0, 0, 0.05);
+	gap: 16;
+	grid-template-columns: 1fr auto;
+}
+
+.activeServerButton {
+	background: var(--primary);
+}
+
+.currentButton:active,
+.weba:hover {
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+	filter: brightness(0.9);
+}
+
+.currentButtonText {
+	color: var(--tg-theme-text-color);
+
+	font-weight: 600;
+}
+
+.activeServerButton .currentButtonText {
+	color: var(--white);
+}
+
+.arrowIcon {
+	width: 16px;
+	fill: var(--tg-theme-subtitle-text-color);
+
+	padding-left: 16px;
+}
+
+.activeServerButton .arrowIcon {
+	fill: var(--white);
+}
+
+.crownIcon {
+	fill: var(--primary);
+}
+
+@media (max-width: 300px) {
+	.currentButton {
+		min-width: 150px;
+	}
+}

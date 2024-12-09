@@ -1,0 +1,23 @@
+.serversList {
+	display: grid;
+
+	width: 100%;
+	gap: 16px;
+	justify-items: left;
+}
+
+.serversListTitle {
+	color: var(--tg-theme-text-color);
+
+	font-weight: 600;
+}
+
+.serversListText {
+	color: var(--tg-theme-subtitle-text-color);
+
+	font-weight: 400;
+}
+
+.advancedServersText {
+	margin-top: 16px;
+}

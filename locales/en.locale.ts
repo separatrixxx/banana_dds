@@ -31,6 +31,7 @@ export const en = {
     },
     errors: {
         get_user_error: "An error occurred while retrieving user information",
+        get_servers_error: "An error occurred while retrieving available servers",
     },
     download_launcher: "Download launcher",
     connected_devices: "Connected devices",
@@ -38,4 +39,8 @@ export const en = {
     change_plan: "Change plan",
     cancel_subscription: "Cancel subscription",
     installation_guide: "Installation guide",
+    select_server: "Select server",
+    available_servers: "Available servers",
+    advanced_servers: "Advanced servers",
+    upgrade_to_select_server: "Upgrade to $$$ to select this server",
 };
