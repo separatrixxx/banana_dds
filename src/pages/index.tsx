@@ -10,10 +10,10 @@ function Main(): JSX.Element {
   return (
     <>
       <Head>
-        <title>{setLocale(router.locale).banana_vpn}</title>
-        <meta name='description' content={setLocale(router.locale).banana_vpn} />
-        <meta property='og:title' content={setLocale(router.locale).banana_vpn} />
-        <meta name='og:description' content={setLocale(router.locale).banana_vpn} />
+        <title>{setLocale(router.locale).banana_dds}</title>
+        <meta name='description' content={setLocale(router.locale).banana_dds} />
+        <meta property='og:title' content={setLocale(router.locale).banana_dds} />
+        <meta name='og:description' content={setLocale(router.locale).banana_dds} />
         <meta charSet="utf-8" />
       </Head>
       <MainPage />

@@ -6,12 +6,6 @@
 	justify-items: left;
 }
 
-.serversListTitle {
-	color: var(--tg-theme-text-color);
-
-	font-weight: 600;
-}
-
 .serversListText {
 	color: var(--tg-theme-subtitle-text-color);
 

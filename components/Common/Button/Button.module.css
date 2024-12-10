@@ -61,8 +61,8 @@
 
 	animation: spin 1s linear infinite;
 
-	border: 1px solid var(--white);
-	border-top: 1px solid var(--primary);
+	border: 3px solid var(--white);
+	border-top: 3px solid var(--primary);
 	border-radius: 9999px;
 }
 

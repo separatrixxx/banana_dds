@@ -6,3 +6,9 @@ export interface BaseArguments {
     tgUser: ITelegramUser | undefined,
     dispatch: any,
 }
+
+export interface CreateSubscriptionArguments extends Omit<BaseArguments, 'dispatch'> {
+    type: 'Basic' | 'Pro' | 'Premium',
+    duration: number,
+    setIsLoading: (e: boolean) => void,
+}

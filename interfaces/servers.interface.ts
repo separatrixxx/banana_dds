@@ -1,4 +1,10 @@
 export interface ServerInterface {
-    name: string,
-    plan: 'Basic' | 'Pro' | 'Marat',
+    zones: ServerItem[],
+}
+
+export interface ServerItem {
+    zone: string,
+    type: string,
+    active_users: number,
+    sub_rank: string[],
 }

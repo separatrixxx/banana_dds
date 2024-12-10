@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 import { setLocale } from "./locale.helper";
 import { setUser, setUserDefault } from "../features/user/userSlice";
 import { BaseArguments } from "../interfaces/refactor.interface";
@@ -12,17 +12,11 @@ export async function getUser(args: BaseArguments) {
     try {
         dispatch(setUserDefault());
 
-        const user: UserInterface = {
-            id: 1,
-            plan: 'None',
-            duration: 'monthly',
-            price: 3,
-            date_plan: '12-08-2025',
-            devices: ['Sosung Galaxy O5', 'HyperOptimus X Infinity Ultra Pro Max 7G+'],
-            current_server: 'Germany',
-        }        
+        const { data: response }: AxiosResponse<UserInterface> = await axios.get(process.env.NEXT_PUBLIC_DOMAIN +
+            '/user/' + tgUser?.id,
+        );
 
-        dispatch(setUser(user));
+        dispatch(setUser(response));
 
         getServers({
             dispatch: dispatch,

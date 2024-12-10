@@ -10,45 +10,11 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
-import { PlanInterface } from '../../../interfaces/plan.interface';
 import { PlanItem } from '../PlanItem/PlanItem';
+import { getPlans } from '../../../helpers/plan.helper';
 
 
-export const PlanBlock = ({ setActibePlan }: PlanBlockProps): JSX.Element => {
-    const { webApp, tgUser } = useSetup();
-
-    const [duration, setDuration] = useState<'monthly' | 'yearly'>('monthly');
-
-    const plans: PlanInterface[] = [
-        {
-            id: 1,
-            name: 'Basic',
-            priceM: 3,
-            priceY: 30,
-            devices: 1,
-            servers: 1,
-            speed: 'limited',
-        },
-        {
-            id: 2,
-            name: 'Pro',
-            priceM: 5,
-            priceY: 50,
-            devices: 3,
-            servers: 5,
-            speed: 'normal',
-        },
-        {
-            id: 3,
-            name: 'Marat',
-            priceM: 10,
-            priceY: 110,
-            devices: 10,
-            servers: 10,
-            speed: 'increased',
-        },
-    ];
-
+export const PlanBlock = ({ duration, isSmall, setDuration, setActivePlan }: PlanBlockProps): JSX.Element => {
     return (
         <div className={styles.planBlock}>
             <PlanDuration duration={duration} setDuration={setDuration} />
@@ -56,14 +22,14 @@ export const PlanBlock = ({ setActibePlan }: PlanBlockProps): JSX.Element => {
                 modules={[Pagination, A11y, Autoplay]}
                 slidesPerView={1.2}
                 scrollbar={{ draggable: true }}
-                onSlideChange={(swiper) => setActibePlan(plans[swiper.activeIndex].name as 'Basic')}>
+                onSlideChange={(swiper) => setActivePlan(getPlans()[swiper.activeIndex].name as 'Basic')}>
                 {
-                    plans.map(p => (
-                        <SwiperSlide key={p.id}>
+                    getPlans().map(p => (
+                        <SwiperSlide key={p.name}>
                             <PlanItem name={p.name} priceM={p.priceM}
-                                priceY={p.priceY} duration={duration}
+                                priceY={p.priceY} duration={duration.name}
                                 devices={p.devices} servers={p.servers}
-                                speed={p.speed}/>
+                                traffic={p.traffic} isSmall={isSmall} />
                         </SwiperSlide>
                     ))
                 }

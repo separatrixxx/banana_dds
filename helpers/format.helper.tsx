@@ -1,14 +1,6 @@
 import { format } from 'date-fns';
 
 
-export function formatPrice(price: number, locale: string | undefined): string {
-    if (locale === 'ru') {
-        return price.toLocaleString('ru-RU') + '₽';
-    }
-
-    return '$' + price.toLocaleString('en-EN');
-}
-
 export function formatDate(date: string): string {
   return format(new Date(date), 'dd.MM.yyyy');
 }
@@ -35,3 +27,14 @@ export function formatText(count: number): 'nom' | 'sin' | 'gen' {
     
     return 'gen';
 };
+
+export function formatDeviceName(deviceName: string): string {
+  if (deviceName.length <= 8) {
+    return deviceName;
+  }
+  
+  const start = deviceName.slice(0, 4);
+  const end = deviceName.slice(-4);
+  
+  return `${start}........${end}`;
+}

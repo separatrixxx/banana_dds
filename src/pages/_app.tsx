@@ -17,10 +17,10 @@ export default function App({ Component, pageProps }: AppProps) {
     <Provider store={store}>
       <TelegramProvider>
         <Head>
-          <title>{setLocale(router.locale).banana_vpn}</title>
-          <meta name='description' content={setLocale(router.locale).banana_vpn} />
-          <meta property='og:title' content={setLocale(router.locale).banana_vpn} />
-          <meta property='og:description' content={setLocale(router.locale).banana_vpn} />
+          <title>{setLocale(router.locale).banana_dds}</title>
+          <meta name='description' content={setLocale(router.locale).banana_dds} />
+          <meta property='og:title' content={setLocale(router.locale).banana_dds} />
+          <meta property='og:description' content={setLocale(router.locale).banana_dds} />
           <meta charSet="utf-8" />
           <link rel="icon" href="/logo.svg" type="image/svg+xml" />
         </Head>

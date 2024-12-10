@@ -8,5 +8,6 @@ export interface PlanItemProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivE
     duration: 'monthly' | 'yearly',
     devices: number,
     servers: number,
-    speed: 'normal' | 'limited' | 'increased',
+    traffic: number,
+    isSmall?: boolean,
 }

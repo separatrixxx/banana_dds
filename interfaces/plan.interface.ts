@@ -1,9 +1,13 @@
 export interface PlanInterface {
-    id: number,
-    name: string,
+    name: 'Basic' | 'Pro' | 'Premium',
+    servers: number,
+    devices: number,
+    traffic: number,
     priceM: number,
     priceY: number,
-    devices: number,
-    servers: number,
-    speed: 'normal' | 'limited' | 'increased',
+}
+
+export interface PlanDurationInterface {
+    name: 'monthly' | 'yearly',
+    days: number,
 }

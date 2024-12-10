@@ -1,0 +1,7 @@
+.changePlan {
+	display: grid;
+	justify-items: center;
+
+	width: 100%;
+	gap: 32px;
+}

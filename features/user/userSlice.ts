@@ -3,13 +3,19 @@ import { UserInterface } from '../../interfaces/user.interface';
 
 
 const userData: UserInterface = {
-    id: 0,
-    plan: 'None',
-    duration: 'monthly',
-    price: 0,
-    date_plan: '',
-    devices: [],
-    current_server: '',
+  user_id: 0,
+  telegram_id: 0,
+  username: '',
+  subscription: {
+      status: 'inactive',
+      type: '',
+      valid_until: null,
+      available_zones: [],
+      traffic_limit: 0,
+      maximum_devices: 0,
+      last_subcription_days: 0,
+  },
+  devices: [],
 };
 
 export const userSlice = createSlice({
@@ -21,15 +27,12 @@ export const userSlice = createSlice({
     setUser: (state, action) => {
       state.user = action.payload
     },
-    setUserPlan: (state, action) => {
-      state.user.plan = action.payload
-    },
     setUserDefault: (state) => {
       state.user = userData
     },
   },
 });
 
-export const { setUser, setUserPlan, setUserDefault } = userSlice.actions;
+export const { setUser, setUserDefault } = userSlice.actions;
 
 export default userSlice.reducer;

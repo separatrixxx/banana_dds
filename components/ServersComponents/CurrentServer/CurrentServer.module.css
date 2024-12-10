@@ -1,7 +1,8 @@
 .currentServerButton {
-	width: calc(100% - 60px);
-	margin-bottom: 100px;
-	padding: 12px 30px;
+	align-self: start;
+
+	width: calc(100% - 60px) !important;
+	padding: 12px 30px !important;
 }
 
 .serversModal > div {

@@ -31,13 +31,12 @@ export const MainPage = (): JSX.Element => {
                         />
                         <Header />
                         {
-                            user.plan === 'None' ?
+                            user.subscription.status === 'inactive' ?
                                 <MainBlock />
                             : <ProfileBlock />
                         }
                         <MapPattern className={styles.mapPattern} />
                         <div className={styles.gradient} />
-
                     </>
             }
         </div>

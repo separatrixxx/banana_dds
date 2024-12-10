@@ -26,11 +26,21 @@
 }
 
 .planPrice {
+	display: grid;
+	align-items: center;
+
 	user-select: none;
 
 	color: var(--tg-theme-text-color);
 
 	font-weight: 800;
+	grid-template-columns: auto 1fr;
+	gap: 8px;
+}
+
+.planPrice > svg {
+	height: 30px;
+	fill: var(--primary);
 }
 
 .planDuration {
@@ -65,4 +75,10 @@
 .planFeature > svg {
 	width: 16px;
 	fill: rgba(255, 190, 3, 0.3);
+}
+
+@media (max-width: 300px) {
+	.planDuration {
+		display: none;
+	}
 }

@@ -6,12 +6,23 @@ import { Button } from '../../Common/Button/Button';
 import { useState } from 'react';
 import { Modal } from '../Modal/Modal';
 import { PlanInfo } from '../../PlanComponents/PlanInfo/PlanInfo';
+import { PlanDurationInterface } from '../../../interfaces/plan.interface';
+import { ChangePlan } from '../../PlanComponents/ChangePlan/ChangePlan';
 
 
 export const Header = (): JSX.Element => {
     const { tgUser, user } = useSetup();
 
     const [isActive, setIsActive] = useState<boolean>(false);
+    const [type, setType] = useState<'info' | 'change'>('info');
+
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+
+    const [activePlan, setActivePlan] = useState<'Basic' | 'Pro' | 'Premium'>('Basic');
+    const [duration, setDuration] = useState<PlanDurationInterface>({
+        name: 'monthly',
+        days: 30,
+    });
 
     return (
         <>
@@ -24,15 +35,20 @@ export const Header = (): JSX.Element => {
                         {tgUser?.username ? tgUser?.username : tgUser?.first_name}
                     </Htag>
                 </div>
-                <Button isDisabled={user.plan === 'None'} isIcon={true}
+                <Button isDisabled={user.subscription.status === 'inactive'} isIcon={true}
                     onClick={() => {
-                        if (user.plan !== 'None') {
+                        if (user.subscription.status === 'active') {
+                            setType('info');
                             setIsActive(true);
                         }
                     }} />
             </header>
             <Modal isActive={isActive} setIsActive={setIsActive}>
-                <PlanInfo />
+                {
+                    type === 'info' ?
+                        <PlanInfo setType={setType} />
+                    : <ChangePlan />
+                }
             </Modal>
         </>
     );

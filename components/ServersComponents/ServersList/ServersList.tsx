@@ -3,59 +3,40 @@ import { useSetup } from '../../../hooks/useSetup';
 import { Htag } from '../../Common/Htag/Htag';
 import { setLocale } from '../../../helpers/locale.helper';
 import { ServerButton } from '../ServerButton/ServerButton';
-import { ToastError } from '../../Common/Toast/Toast';
+import { ToastError, ToastSuccess } from '../../Common/Toast/Toast';
 import cn from 'classnames';
+import { getPlans } from '../../../helpers/plan.helper';
 
 
 export const ServersList = (): JSX.Element => {
     const { tgUser, user, servers } = useSetup();
 
-    const availableServers = servers.filter(server => {
-        if (user.plan === 'Basic') {
-            return server.plan === 'Basic';
-        } else if (user.plan === 'Pro') {
-            return server.plan === 'Basic' || server.plan === 'Pro';
-        } else if (user.plan === 'Marat') {
-            return true;
-        }
-
-        return false;
-    });
-    
-    const advancedServers = servers.filter(server => {
-        if (user.plan === 'Basic') {
-            return server.plan !== 'Basic';
-        } else if (user.plan === 'Pro') {
-            return server.plan !== 'Basic' && server.plan !== 'Pro';
-        } else if (user.plan === 'Marat') {
-            return false;
-        }
-
-        return true; 
-    });
+    const availableServers = servers.filter(server => server.sub_rank.includes(user.subscription.type));
+    const advancedServers = servers.filter(server => !server.sub_rank.includes(user.subscription.type));
 
     return (
         <div className={styles.serversList}>
-            <Htag tag='m' className={styles.serversListTitle}>
-                {setLocale(tgUser?.language_code).select_server}
-            </Htag>
             <Htag tag='s' className={styles.serversListText}>
                 {setLocale(tgUser?.language_code).available_servers}
             </Htag>
             {availableServers.map(s => (
-                <ServerButton key={s.name} text={s.name} isActive={s.name === user.current_server}
-                    onClick={() => {}}/>
+                <ServerButton key={s.zone} text={s.zone} isActive={false}
+                    onClick={() => ToastSuccess(setLocale(tgUser?.language_code).you_can_select_this_server_in_launcher)} />
             ))}
             {
-                user.plan !== 'Marat' &&
+                advancedServers.length > 0 &&
                     <Htag tag='s' className={cn(styles.serversListText, styles.advancedServersText)}>
                         {setLocale(tgUser?.language_code).advanced_servers}
                     </Htag>
             }
             {advancedServers.map(s => (
-                <ServerButton key={s.name} text={s.name} isAdvanced={true}
-                    onClick={() => ToastError(setLocale(tgUser?.language_code).upgrade_to_select_server
-                        .replace('$$$', s.plan))}/>
+                <ServerButton key={s.zone} text={s.zone} isAdvanced={true}
+                    onClick={() => {
+                        const plan = getPlans().find(p => p.name.toLowerCase() === s.sub_rank[s.sub_rank.length - 1]);
+
+                        ToastError(setLocale(tgUser?.language_code).upgrade_to_select_server
+                            .replace('$$$', plan?.name || ''))
+                    }} />
             ))}
         </div>
     );

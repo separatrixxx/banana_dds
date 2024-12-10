@@ -10,7 +10,7 @@ export const StartText = (): JSX.Element => {
     return (
         <div className={styles.startTextDiv}>
             <Htag tag='m' className={styles.startTitle}>
-                {setLocale(tgUser?.language_code).welcome_to_banana_vpn}
+                {setLocale(tgUser?.language_code).welcome_to_banana_dds}
             </Htag>
             <Htag tag='s' className={styles.startText}>
                 {setLocale(tgUser?.language_code).start_text1}

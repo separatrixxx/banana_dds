@@ -17,15 +17,25 @@
 }
 
 .planButtonsDiv {
-	gap: 12px;
+	gap: 16px;
 
 	width: 100%;
 }
 
 .planPrice {
+	display: grid;
+	align-items: center;
+
 	color: var(--tg-theme-text-color);
 
 	font-weight: 800;
+	grid-template-columns: auto 1fr;
+	gap: 8px;
+}
+
+.planPrice > svg {
+	height: 30px;
+	fill: var(--primary);
 }
 
 .planTextS {

@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { ServerInterface } from '../../interfaces/servers.interface';
+import { ServerItem } from '../../interfaces/servers.interface';
 
 
-const serversData: ServerInterface[] = [];
+const serversData: ServerItem[] = [];
 
 export const serversSlice = createSlice({
   name: 'servers',

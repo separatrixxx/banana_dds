@@ -13,16 +13,22 @@ export const PlanDuration = ({ duration, setDuration }: PlanDurationProps): JSX.
         <div className={styles.planDaration}>
             <button className={cn(styles.durationButton, {
                 [styles.weba]: webApp?.platform === 'weba',
-                [styles.activeDurationButton]: duration === 'monthly',
-            })} onClick={() => setDuration('monthly')}>
+                [styles.activeDurationButton]: duration.name === 'monthly',
+            })} onClick={() => setDuration({
+                name: 'monthly',
+                days: 30,
+            })}>
                 <Htag tag='s' className={styles.durationText}>
                     {setLocale(tgUser?.language_code).monthly}
                 </Htag>
             </button>
             <button className={cn(styles.durationButton, {
                 [styles.weba]: webApp?.platform === 'weba',
-                [styles.activeDurationButton]: duration === 'yearly',
-            })} onClick={() => setDuration('yearly')}>
+                [styles.activeDurationButton]: duration.name === 'yearly',
+            })} onClick={() => setDuration({
+                name: 'yearly',
+                days: 365,
+            })}>
                 <Htag tag='s' className={styles.durationText}>
                     {setLocale(tgUser?.language_code).yearly}
                 </Htag>

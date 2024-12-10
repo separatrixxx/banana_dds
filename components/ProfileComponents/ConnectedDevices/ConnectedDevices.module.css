@@ -7,15 +7,84 @@
 }
 
 .connectedDevicesTitle {
+	display: grid;
+	align-items: center;
+
+	width: 100%;
 	margin-bottom: 10px;
 
 	color: var(--tg-theme-text-color);
 
 	font-weight: 600;
+	grid-template-columns: 1fr auto;
+	gap: 16px;
+}
+
+.plusIcon,
+.copyIcon {
+	width: 18px;
+
+	cursor: pointer;
+	transition-duration: 300ms;
+
+	opacity: 0.5;
+	fill: var(--tg-theme-subtitle-text-color);
+}
+
+.plusIcon {
+	width: 18px;
+}
+
+.copyIcon {
+	width: 16px;
+}
+
+.button:active,
+.copyIcon:active,
+.webaPlus:hover {
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+	fill: var(--primary);
+
+	opacity: 1;
+}
+
+.connectedDeviceItem {
+	display: grid;
+	align-items: center;
+
+	width: 100%;
+	gap: 12px;
+}
+
+.webaDeviceItem {
+	grid-template-columns: auto 1fr auto;
 }
 
 .connectedDevicesText {
 	color: var(--tg-theme-subtitle-text-color);
 
 	font-weight: 400;
+}
+
+.onlineMarker {
+	width: 10px;
+	height: 10px;
+
+	border-radius: 9999px;
+	background: var(--primary);
+}
+
+.offlineMarker {
+	opacity: 0.5;
+	background: var(--tg-theme-subtitle-text-color);
+}
+
+.removeIcon:active,
+.webaRemove:hover {
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+	fill: var(--error);
+
+	opacity: 0.5;
 }
