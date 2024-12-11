@@ -11,11 +11,10 @@ import { useState } from 'react';
 import cn from 'classnames';
 
 
-export const DeviceItem = ({ deviceHash, isAuthorized }: DeviceItemProps): JSX.Element => {
+export const DeviceItem = ({ deviceHash, isAuthorized, isFullHash, setIsFullHash }: DeviceItemProps): JSX.Element => {
     const { dispatch, webApp, tgUser } = useSetup();
 
     const [isLoading, setIsLoading] = useState<boolean>(false);
-    const [isFullHash, setIsFullHash] = useState<boolean>(false);
 
     return (
         <div className={styles.deviceItem}>
@@ -23,17 +22,13 @@ export const DeviceItem = ({ deviceHash, isAuthorized }: DeviceItemProps): JSX.E
                 [styles.offlineMarker]: !isAuthorized,
             })} />
             <Htag tag='s' className={styles.deviceItemText}>
-                {!isFullHash ? formatDeviceName(deviceHash)
+                {isFullHash !== deviceHash ? formatDeviceName(deviceHash)
                     : `happ://add/https://api-vpn.banana.codes/sub/${deviceHash}#BananaCodes`}
             </Htag>
             <CopyIcon className={cn(styles.copyIcon, {
                 [styles.webaCopy]: webApp?.platform === 'weba',
             })} onClick={() => {
-                if (webApp?.platform !== 'weba') {
-                    copyToClipboard(deviceHash);
-                } else {
-                    setIsFullHash(!isFullHash);
-                }
+                copyToClipboard(deviceHash, isFullHash, setIsFullHash);
             }} />
             {
                 !isLoading ?

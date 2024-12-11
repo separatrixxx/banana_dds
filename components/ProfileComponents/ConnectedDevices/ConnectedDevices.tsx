@@ -13,6 +13,7 @@ export const ConnectedDevices = (): JSX.Element => {
     const { dispatch, webApp, tgUser, user } = useSetup();
 
     const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [isFullHash, setIsFullHash] = useState<string | null>(null);
 
     return (
         <div className={styles.connectedDevices}>
@@ -34,7 +35,8 @@ export const ConnectedDevices = (): JSX.Element => {
             </Htag>
             {[...user.devices].reverse().map(d => (
                 <DeviceItem key={d.device_hash} deviceHash={d.device_hash}
-                    isAuthorized={d.is_authorized} />
+                    isAuthorized={d.is_authorized} isFullHash={isFullHash}
+                    setIsFullHash={setIsFullHash} />
             ))}
         </div>
     );
