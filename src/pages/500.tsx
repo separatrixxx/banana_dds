@@ -10,7 +10,7 @@ function PageServerFailure(): JSX.Element {
 	return (
 		<>
 			<Head>
-				<title>{setLocale(router.locale).banana_dds + ' - 500'}</title>
+				<title>{setLocale(router.locale).banana_vpn + ' - 500'}</title>
 			</Head>
 			<ErrorPage error={500} />
 		</>

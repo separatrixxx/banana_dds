@@ -10,7 +10,7 @@ function PageNotFound(): JSX.Element {
 	return (
 		<>
 			<Head>
-				<title>{setLocale(router.locale).banana_dds + ' - 404'}</title>
+				<title>{setLocale(router.locale).banana_vpn + ' - 404'}</title>
 			</Head>
 			<ErrorPage error={404} />
 		</>

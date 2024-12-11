@@ -9,9 +9,7 @@ export async function getServers(args: BaseArguments) {
     const { dispatch, webApp, tgUser } = args;
 
     try {
-        const { data: response }: AxiosResponse<ServerInterface> = await axios.get(process.env.NEXT_PUBLIC_DOMAIN +
-            '/zones',
-        );
+        const { data: response }: AxiosResponse<ServerInterface> = await axios.get('/api/getServers');
 
         dispatch(setServers(response.zones));
     } catch (err: any) {

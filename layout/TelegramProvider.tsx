@@ -19,7 +19,6 @@ export const TelegramProvider = ({ children }: { children: React.ReactNode }) =>
 
   useEffect(() => {
     const app = (window as any).Telegram?.WebApp;
-    console.log(app)
 
     if (app) {
       app.ready();

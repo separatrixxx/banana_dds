@@ -17,33 +17,35 @@ export const DownloadLauncher = (): JSX.Element => {
                 {setLocale(tgUser?.language_code).download_launcher}
             </Htag>
             <div className={styles.downloadLinksDiv}>
-            <Link href='/' className={cn(styles.downloadLauncherLink, {
+            {/* <Link href='/' className={cn(styles.downloadLauncherLink, {
                     [styles.weba]: webApp?.platform === 'weba',
-                })}>
+                })} target='_blank'>
                     <Htag tag='m'>
                         {'Windows'}
                     </Htag>
                     <ArrowIcon />
-                </Link>
-                <Link href='/' className={cn(styles.downloadLauncherLink, {
+                </Link> */}
+                {/* <Link href='/' className={cn(styles.downloadLauncherLink, {
                     [styles.weba]: webApp?.platform === 'weba',
-                })}>
+                })} target='_blank'>
                     <Htag tag='m'>
                         {'MacOS'}
                     </Htag>
                     <ArrowIcon />
-                </Link>
-                <Link href='/' className={cn(styles.downloadLauncherLink, {
+                </Link> */}
+                <Link href='https://github.com/FlyFrg/Happ_android_update/releases/download/1.5/Happ_1.5.0_1069_all.apk'
+                    className={cn(styles.downloadLauncherLink, {
                     [styles.weba]: webApp?.platform === 'weba',
-                })}>
+                })} target='_blank'>
                     <Htag tag='m'>
                         {'Android'}
                     </Htag>
                     <ArrowIcon />
                 </Link>
-                <Link href='/' className={cn(styles.downloadLauncherLink, {
+                <Link href='https://apps.apple.com/us/app/happ-proxy-utility/id6504287215'
+                    className={cn(styles.downloadLauncherLink, {
                     [styles.weba]: webApp?.platform === 'weba',
-                })}>
+                })} target='_blank'>
                     <Htag tag='m'>
                         {'iOS'}
                     </Htag>

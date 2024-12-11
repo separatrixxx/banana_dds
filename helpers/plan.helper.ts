@@ -26,7 +26,7 @@ export function getPlans(): PlanInterface[] {
         {
             name: 'Premium',
             servers: 3,
-            devices: 7,
+            devices: 5,
             traffic: 1000,
             priceM: 1200,
             priceY: 13500,
@@ -40,18 +40,16 @@ export async function createSubscription(args: CreateSubscriptionArguments) {
     try {
         setIsLoading(true);
 
-        await axios.post(process.env.NEXT_PUBLIC_DOMAIN +
-            '/subscription/create/' + tgUser?.id,
-            {
-                subscription_type: type.toLowerCase(),
-                duration_days: duration
-            }
-        ).then(() => {
-            setIsLoading(false);
+        await axios.post('/api/createSubscription', {
+            user_id: tgUser?.id,
+            subscription_type: type.toLowerCase(),
+            duration_days: duration,
+        });
 
-            webApp?.showAlert(setLocale(tgUser?.language_code).pay_for_subscription_and_restart, async function () {
-                webApp.close();
-            });
+        setIsLoading(false);
+
+        webApp?.showAlert(setLocale(tgUser?.language_code).pay_for_subscription_and_restart, async function () {
+            webApp.close();
         });
     } catch (err: any) {
         setIsLoading(false);
@@ -65,15 +63,12 @@ export async function cancelSubscription(args: BaseArguments) {
     const { webApp, tgUser } = args;
 
     try {
-        await axios.delete(process.env.NEXT_PUBLIC_DOMAIN +
-            '/subscription/cancel/' + tgUser?.id,
-        ).then(() => {
-            getUser(args);
-        });
+        await axios.delete('/api/cancelSubscription', {
+            params: { user_id: tgUser?.id },
+        }). then(() => getUser(args));
     } catch (err: any) {
         webApp?.showAlert(setLocale(tgUser?.language_code).errors.cancel_subscription_error);
 
         console.error(err);
     }
 }
-

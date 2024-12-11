@@ -1,0 +1,74 @@
+.deviceItem {
+	display: grid;
+	align-items: center;
+
+	width: 100%;
+	gap: 12px;
+	grid-template-columns: auto 1fr auto auto;
+}
+
+.deviceItemText {
+	word-break: break-all;
+
+	color: var(--tg-theme-subtitle-text-color);
+
+	font-weight: 400;
+	overflow-wrap: normal;
+}
+
+.onlineMarker {
+	width: 10px;
+	height: 10px;
+
+	border-radius: 9999px;
+	background: var(--primary);
+}
+
+.offlineMarker {
+	opacity: 0.5;
+	background: var(--tg-theme-subtitle-text-color);
+}
+
+.copyIcon {
+	width: 16px;
+
+	cursor: pointer;
+	transition-duration: 300ms;
+
+	opacity: 0.5;
+	fill: var(--tg-theme-subtitle-text-color);
+}
+
+.copyIcon:active,
+.webaCopy:hover {
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+	fill: var(--primary);
+
+	opacity: 1;
+}
+
+.removeIcon:active,
+.webaRemove:hover {
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+	fill: var(--error);
+
+	opacity: 0.5;
+}
+
+.spinner {
+	width: 12px;
+	height: 12px;
+
+	animation: spin 1s linear infinite;
+
+	border: 2px solid transparent;
+	border-top: 2px solid var(--primary);
+	border-radius: 9999px;
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}

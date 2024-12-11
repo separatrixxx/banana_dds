@@ -22,7 +22,9 @@ export const PlanItem = ({ name, priceM, priceY, duration, devices, servers, tra
                         : priceY.toLocaleString(tgUser?.language_code)}
                     <StarIcon />
                 </Htag>
-      
+                <Htag tag='s' className={styles.planDuration}>
+                    {setLocale(tgUser?.language_code)[duration === 'monthly' ? 'per_month' : 'per_year']}
+                </Htag>
             </div>
             {
                 !isSmall &&

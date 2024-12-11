@@ -77,8 +77,9 @@
 	fill: rgba(255, 190, 3, 0.3);
 }
 
-@media (max-width: 300px) {
-	.planDuration {
-		display: none;
+@media (max-width: 400px) {
+	.planPriceDiv {
+		grid-template-columns: auto;
+		gap: 5px;
 	}
 }

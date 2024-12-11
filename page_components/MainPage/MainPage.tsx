@@ -6,6 +6,7 @@ import { MainLink } from '../../components/MainComponents/MainLink/MainLink';
 import MapPattern from './map.svg';
 import { MainBlock } from '../../components/MainComponents/MainBlock/MainBlock';
 import { ProfileBlock } from '../../components/ProfileComponents/ProfileBlock/ProfileBlock';
+import { Spinner } from '../../components/Common/Spinner/Spinner';
 
 
 export const MainPage = (): JSX.Element => {
@@ -14,7 +15,7 @@ export const MainPage = (): JSX.Element => {
     if (webApp) {
         webApp?.BackButton.hide();
     }
-
+    
     return (
         <div className={styles.wrapper}>
             {
@@ -31,9 +32,11 @@ export const MainPage = (): JSX.Element => {
                         />
                         <Header />
                         {
-                            user.subscription.status === 'inactive' ?
+                            user.user_id > 0 && user.subscription.status === 'inactive' ?
                                 <MainBlock />
-                            : <ProfileBlock />
+                            : user.user_id > 0 && user.subscription.status === 'active' ?
+                                <ProfileBlock />
+                            : <Spinner />
                         }
                         <MapPattern className={styles.mapPattern} />
                         <div className={styles.gradient} />

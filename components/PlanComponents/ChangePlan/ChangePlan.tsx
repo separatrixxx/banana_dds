@@ -1,12 +1,8 @@
 import styles from './ChangePlan.module.css';
 import { useSetup } from '../../../hooks/useSetup';
-import { Htag } from '../../Common/Htag/Htag';
 import { setLocale } from '../../../helpers/locale.helper';
-import { formatDate } from '../../../helpers/format.helper';
 import { Button } from '../../Common/Button/Button';
-import { cancelSubscription, createSubscription, getPlans } from '../../../helpers/plan.helper';
-import StarIcon from './star.svg';
-import cn from 'classnames';
+import { createSubscription } from '../../../helpers/plan.helper';
 import { PlanBlock } from '../PlanBlock/PlanBlock';
 import { useState } from 'react';
 import { PlanDurationInterface } from '../../../interfaces/plan.interface';

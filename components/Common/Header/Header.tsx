@@ -6,7 +6,6 @@ import { Button } from '../../Common/Button/Button';
 import { useState } from 'react';
 import { Modal } from '../Modal/Modal';
 import { PlanInfo } from '../../PlanComponents/PlanInfo/PlanInfo';
-import { PlanDurationInterface } from '../../../interfaces/plan.interface';
 import { ChangePlan } from '../../PlanComponents/ChangePlan/ChangePlan';
 
 
@@ -15,14 +14,6 @@ export const Header = (): JSX.Element => {
 
     const [isActive, setIsActive] = useState<boolean>(false);
     const [type, setType] = useState<'info' | 'change'>('info');
-
-    const [isLoading, setIsLoading] = useState<boolean>(false);
-
-    const [activePlan, setActivePlan] = useState<'Basic' | 'Pro' | 'Premium'>('Basic');
-    const [duration, setDuration] = useState<PlanDurationInterface>({
-        name: 'monthly',
-        days: 30,
-    });
 
     return (
         <>

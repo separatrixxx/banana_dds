@@ -1,7 +1,5 @@
 import { PlanBlockProps } from './PlanBlock.props';
 import styles from './PlanBlock.module.css';
-import { useSetup } from '../../../hooks/useSetup';
-import { useState } from 'react';
 import { PlanDuration } from '../PlanDuration/PlanDuration';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';

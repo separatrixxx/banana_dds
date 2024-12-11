@@ -4,7 +4,7 @@ module.exports = {
 		defaultLocale: 'en',
 	},
 	images: {
-		domains: ['https://banana_dds.vercel.app/'],
+		domains: ['https://banana_vpn.vercel.app/'],
 	},
 	webpack(config) {
 		config.module.rules.push({

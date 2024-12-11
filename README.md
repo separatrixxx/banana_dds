@@ -1,4 +1,4 @@
-# banana_dds
+# banana_vpn
 
 ### Install dependencies first: `npm install`
 

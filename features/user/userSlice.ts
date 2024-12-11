@@ -3,7 +3,7 @@ import { UserInterface } from '../../interfaces/user.interface';
 
 
 const userData: UserInterface = {
-  user_id: 0,
+  user_id: -1,
   telegram_id: 0,
   username: '',
   subscription: {

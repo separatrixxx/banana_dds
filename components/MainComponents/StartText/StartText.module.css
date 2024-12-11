@@ -9,8 +9,31 @@
 	font-weight: 600;
 }
 
-.startText {
+.linkDiv {
+	display: grid;
+	align-items: center;
+
+	width: 100%;
+	grid-template-columns: 1fr auto;
+	gap: 16px;
+}
+
+.startText,
+.startLink {
 	color: var(--tg-theme-subtitle-text-color);
 
 	font-weight: 400;
+}
+
+.startLink {
+	width: fit-content;
+
+	transition-duration: 300ms;
+}
+
+.startLink:active,
+.weba:hover {
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+	color: var(--primary);
 }
