@@ -30,7 +30,7 @@ export const PlanInfo = ({ setType, }: PlanInfoProps): JSX.Element => {
             </div>
             <Htag tag='s' className={styles.planTextS}>
                 {setLocale(tgUser?.language_code).plan_available_until + ' '
-                    + formatDate(user.subscription.valid_until || '12.10.2024')}
+                    + formatDate(user.subscription.valid_until || '2024-12-11')}
             </Htag>
             <div className={styles.planButtonsDiv}>
                 <Button text={setLocale(tgUser?.language_code).change_plan}
