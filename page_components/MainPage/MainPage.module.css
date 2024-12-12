@@ -8,6 +8,7 @@
 }
 
 .mapPattern {
+	width: 100%;
 	position: absolute;
 	z-index: 6;
 	top: 110px;
