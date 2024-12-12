@@ -17,7 +17,7 @@ function Main(): JSX.Element {
         tgUser: tgUser,
       });
     }
-  }, [router, dispatch]);
+  }, [router, tgUser, webApp, dispatch]);
 
   return (
     <>
