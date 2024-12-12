@@ -1,0 +1,14 @@
+.wrapper {
+	display: grid;
+
+	width: calc(100% - 96px);
+	justify-items: left;
+	padding: 30px 48px;
+	gap: 30px;
+}
+
+.guideTitle {
+	color: var(--dark);
+
+	font-weight: 400;
+}

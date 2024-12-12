@@ -1,0 +1,57 @@
+.guideType {
+	display: grid;
+
+	width: fit-content;
+	height: fit-content;
+	padding: 4px;
+
+	border-radius: 9999px;
+	background: var(--white);
+	box-shadow: 0 8px 12px rgba(0, 0, 0, 0.05);
+	gap: 10px;
+	grid-template-columns: repeat(3, auto);
+	justify-self: center;
+}
+
+.guideTypeButton {
+	align-items: center;
+
+	width: 120px;
+	padding: 5px 0;
+
+	cursor: pointer;
+	transition-duration: 300ms;
+
+	border: none;
+
+	border-radius: 9999px;
+	outline: none;
+	background: var(--white);
+	justify-items: center !important;
+}
+
+.activeButton {
+	background: var(--primary);
+}
+
+.guideTypeButton:active,
+.weba:hover {
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+	filter: brightness(0.9);
+}
+
+.guideTypeText {
+	user-select: none;
+	transition-duration: 300ms;
+
+	color: var(--dark);
+
+	font-weight: 400;
+}
+
+.activeButton .guideTypeText {
+	color: var(--white);
+
+	font-weight: 700;
+}

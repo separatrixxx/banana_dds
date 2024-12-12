@@ -8,14 +8,15 @@
 }
 
 .mapPattern {
-	width: 100%;
 	position: absolute;
 	z-index: 6;
 	top: 110px;
 	left: 0 !important;
-	fill: var(--tg-theme-subtitle-text-color);
+
+	width: 100%;
 
 	opacity: 0.2;
+	fill: var(--tg-theme-subtitle-text-color);
 }
 
 .gradient {

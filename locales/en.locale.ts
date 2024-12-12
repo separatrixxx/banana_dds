@@ -49,4 +49,7 @@ export const en = {
     are_you_sure_you_want_cancel_subscription: "Are you sure you want to cancel your subscription?",
     are_you_sure_you_want_change_plan: "Are you sure you want to change your plan?",
     you_can_select_this_server_in_launcher: "You can select this server in the launcher",
+    slides: "Slides",
+    video: "Video",
+    download_pdf: "Download PDF",
 };

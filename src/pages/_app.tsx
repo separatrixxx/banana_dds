@@ -23,6 +23,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <meta property='og:description' content={setLocale(router.locale).banana_vpn} />
           <meta charSet="utf-8" />
           <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+          <script async src="https://telegram.org/js/telegram-web-app.js" />
         </Head>
         <Component {...pageProps} />
       </TelegramProvider>

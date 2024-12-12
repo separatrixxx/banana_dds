@@ -49,4 +49,7 @@ export const ru = {
     are_you_sure_you_want_cancel_subscription: "Вы уверены, что хотите отменить подписку?",
     are_you_sure_you_want_change_plan: "Вы уверены, что хотите сменить план?",
     you_can_select_this_server_in_launcher: "Вы можете выбрать этот сервер в лаунчере",
+    slides: "Слайды",
+    video: "Видео",
+    download_pdf: "Скачать PDF",
 };

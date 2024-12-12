@@ -17,14 +17,15 @@ export const DownloadLauncher = (): JSX.Element => {
                 {setLocale(tgUser?.language_code).download_launcher}
             </Htag>
             <div className={styles.downloadLinksDiv}>
-            {/* <Link href='/' className={cn(styles.downloadLauncherLink, {
-                    [styles.weba]: webApp?.platform === 'weba',
-                })} target='_blank'>
+                <Link href='https://gitlab.com/wan2ted/banana-vpn-release/-/raw/main/Bananacodes%20VPN%20launcher.exe?ref_type=heads&inline=false'
+                    className={cn(styles.downloadLauncherLink, {
+                        [styles.weba]: webApp?.platform === 'weba',
+                    })} target='_blank'>
                     <Htag tag='m'>
                         {'Windows'}
                     </Htag>
                     <ArrowIcon />
-                </Link> */}
+                </Link>
                 {/* <Link href='/' className={cn(styles.downloadLauncherLink, {
                     [styles.weba]: webApp?.platform === 'weba',
                 })} target='_blank'>
@@ -53,7 +54,7 @@ export const DownloadLauncher = (): JSX.Element => {
                 </Link>
             </div>
             <Button className={styles.downloadButton} text={setLocale(tgUser?.language_code).installation_guide}
-                onClick={() => {}} />
+                onClick={() => webApp?.openLink('/guide')} />
         </div>
     );
 };
