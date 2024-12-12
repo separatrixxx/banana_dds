@@ -13,6 +13,7 @@
 }
 
 .durationButton {
+	display: grid;
 	align-items: center;
 
 	width: 120px;

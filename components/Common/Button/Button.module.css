@@ -17,6 +17,7 @@
 	outline: none;
 	background: var(--primary);
 	justify-items: center;
+
 	box-shadow: 0 9px 24px -14px rgba(237, 98, 20, 1);
 }
 
